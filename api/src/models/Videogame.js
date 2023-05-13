@@ -16,16 +16,20 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    plataforms: {
-      type: DataTypes.STRING,
+    platforms: {
+      type: DataTypes.STRING, //?????????????????
       allowNull: false,
     },
-    imageURL: {
+    backgroung_image: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    releaseDate: {
-      type: DataTypes.DATE,
+    released: {
+      type: DataTypes.DATE, //????????? o es con STRING???????
+      allowNull: false
+    },
+    rating: {
+      type: DataTypes.DECIMAL, //se debe poner limite??? ej. ...DECIMAL(10,2)
       allowNull: false
     }
   }, { timestamps: false });
