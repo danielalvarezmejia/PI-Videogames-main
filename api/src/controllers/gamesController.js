@@ -33,9 +33,7 @@ const getAllGames = async () => {
 const getByName = async (name) => {
   const dbGame = await Videogame.findAll({
     where: {
-      name: {
-        [Op.iLike]: `%${name}%`, // Search case-insensitive
-      },
+      name: { [Op.iLike]: `%${name}%` },
     },
     limit: 15
   })
@@ -43,9 +41,9 @@ const getByName = async (name) => {
   if(dbGame.length > 0) return dbGame; 
 
   const response = (await axios.get(`${API_URL}games?search=${name}&key=${API_KEY}`)).data.results;
-  const filterApiByName = await filterApiGames(response).slice(0, 15);
+  const filterApiByName = await filterApiGames(response);
 
-  if(filterApiByName.length > 0) return filterApiByName;
+  if(filterApiByName.length > 0) return filterApiByName.slice(0, 15);
 
   return 'No game found with that name';
 };

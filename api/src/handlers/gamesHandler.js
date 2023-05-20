@@ -1,9 +1,9 @@
 const { getAllGames, getGameById, createGame, getByName } = require('../controllers/gamesController');
 
 const getVideogames = async (req, res) => {
-  const { name } = req.body;
+  const { name } = req.query;
   try {
-    let result = name 
+    const result = name 
       ? await getByName(name) 
       : await getAllGames()
     // const result = getAllGames()
