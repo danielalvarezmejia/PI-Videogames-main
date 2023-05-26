@@ -4,13 +4,13 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('Genre', {
     id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true, // Marcar la columna 'id' como clave primaria
-      autoIncrement: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-  });
+  }, { timestamps: false });
 };

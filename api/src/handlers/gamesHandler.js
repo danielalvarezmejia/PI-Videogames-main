@@ -15,7 +15,6 @@ const getVideogames = async (req, res) => {
 
 const getVideogamesById = async (req, res) => {
   const { id } = req.params;
-  // const source = isNaN(id) ? 'db' : 'api';
 
   try {
     const result = await getGameById(id)
@@ -26,10 +25,10 @@ const getVideogamesById = async (req, res) => {
 };
 
 const postVideogames = async (req, res) => {
-  const { name, description, platforms, backgroung_image, released, rating } = req.body;
+  const { name, description, platforms, background_image, released, rating, genres } = req.body;
 
   try {
-    const newGame = await createGame(name, description, platforms, backgroung_image, released, rating);
+    const newGame = await createGame(name, description, platforms, background_image, released, rating, genres);
     res.status(200).json(newGame);
   } catch (error) {
     res.status(404).json({ error: error.message });

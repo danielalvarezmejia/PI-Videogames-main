@@ -17,19 +17,19 @@ module.exports = (sequelize) => {
       allowNull: false
     },
     platforms: {
-      type: DataTypes.STRING, //?????????????????
+      type: DataTypes.STRING, 
       allowNull: false,
     },
-    backgroung_image: {
+    background_image: {
       type: DataTypes.STRING,
       allowNull: false
     },
     released: {
-      type: DataTypes.STRING, //????????? o es con STRING???????
+      type: DataTypes.STRING,
       allowNull: false
     },
     rating: {
-      type: DataTypes.DECIMAL, //se debe poner limite??? ej. ...DECIMAL(10,2)
+      type: DataTypes.DECIMAL, // Se debe poner limite??? ej. ...DECIMAL(10,2)
       allowNull: false
     }
   }, { timestamps: false });
