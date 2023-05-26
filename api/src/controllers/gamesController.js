@@ -91,6 +91,19 @@ const createGame = async (name, description, platforms, background_image, releas
   return newGame.addGenre(newGenre);
 };
 
+const deleteGameById = async (id) => {
+  const game = await Videogame.findByPk(id);
+  
+  if(!game) throw Error(`Don't exist VideoGame with id ${id}`);
+  
+  const deleteId = await Videogame.destroy({
+    where: { id },
+  });
+  
+  return deleteId;
+};
+
+// !!!!!!!!FALTA PUT
 module.exports = {
-  getAllGames, getGameById, createGame, getByName
+  getAllGames, getGameById, createGame, getByName, deleteGameById
 }
