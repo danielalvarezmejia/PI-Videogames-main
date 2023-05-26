@@ -1,4 +1,4 @@
-const { getAllGames, getGameById, createGame, getByName } = require('../controllers/gamesController');
+const { getAllGames, getGameById, createGame, getByName, deleteGameById } = require('../controllers/gamesController');
 
 const getVideogames = async (req, res) => {
   const { name } = req.query;
@@ -35,8 +35,21 @@ const postVideogames = async (req, res) => {
   }
 };
 
+const deleteVideogames = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    // delete is a reserved word
+    const deleteId = await deleteGameById(id);
+    res.status(200).json(deleteId)
+  } catch (error) {
+    res.status(404).json({ error: error.message });
+  }
+}
+
 module.exports = {
   getVideogames, 
   getVideogamesById, 
-  postVideogames
+  postVideogames,
+  deleteVideogames
 }
