@@ -14,6 +14,18 @@ const getAllGenres = async () => {
 };
 
 module.exports = { getAllGenres };
+
+
+
+
+
+
+
+
+
+
+
+
 // const dbGenre = await Genre.findAll();
 
 // if (dbGenre.length === 0) {
