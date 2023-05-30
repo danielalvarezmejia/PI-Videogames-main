@@ -1,0 +1,35 @@
+.searchBar {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.input {
+  color: white;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid;
+  margin-right: 8px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  border-image: linear-gradient(to right, #495DFB, #1840D2) 1;
+  border-image-slice: 1;
+  transition: border-image 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-image: linear-gradient(to right, #495DFB, #1840D2, #495DFB) 1;
+}
+
+.button {
+  background-image: linear-gradient(to right, #495DFB, #1840D2);
+  border: 2px solid white;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

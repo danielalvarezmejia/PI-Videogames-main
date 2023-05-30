@@ -1,7 +1,20 @@
+import { useDispatch } from "react-redux"
+import Cards from "../../Components/Cards/Cards"
+import { useEffect } from "react";
+import { getUsers } from "../../redux/actions/actions";
 
 const Home = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUsers());
+  }, [dispatch]);
+
   return (
-    <div>Home</div>
+    <div>
+      <h1>Home</h1>
+      <Cards />
+    </div>
   )
 }
 
