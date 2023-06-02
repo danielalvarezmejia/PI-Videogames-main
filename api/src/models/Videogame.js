@@ -31,6 +31,11 @@ module.exports = (sequelize) => {
     rating: {
       type: DataTypes.DECIMAL, // Se debe poner limite??? ej. ...DECIMAL(10,2)
       allowNull: false
+    },
+    createInDb: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true
     }
   }, { timestamps: false });
 };

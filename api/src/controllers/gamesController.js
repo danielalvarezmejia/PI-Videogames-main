@@ -9,12 +9,13 @@ const filterApiGames = async (arr) => {
     return {
       id: el.id,
       name: el.name,
-      // falta description en la API
+      description: el.description,
       platforms: el.platforms.map(n => n.platform.name),
       background_image: el.background_image,
       released: el.released,
       rating: el.rating,
-      genres: el.genres.map(genre => genre.name)
+      genres: el.genres.map(genre => genre.name),
+      createInDb: false
     }
   })
   return resultApi;

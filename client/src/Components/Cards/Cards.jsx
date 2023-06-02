@@ -4,12 +4,13 @@ import { useSelector } from "react-redux";
 
 const Cards = () => {
 
-  const users = useSelector(state => state.users);
+  const videoGames = useSelector(state => state.videoGames);
+  // console.log('users:', users);
 
   return (
     <div className={style.container}>
       {
-        users.map(user => {
+        videoGames.map(user => {
           return <Card 
             id = {user.id}
             key = {user.id}
